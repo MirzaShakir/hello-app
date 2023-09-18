@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>
+            <input type="text" placeholder="Hello name" [(ngModel)]="helloname" (keyup.enter)="addNewHello()" />
+            <button (click)="addNewHello()">Add Hello</button>
+        </td>
+    </tr>
+    <tr *ngFor="let hello of hellos">
+        <td>
+            <input type="text" [(ngModel)]="hello.name" />
+          </td>
+      <td>
+        <button (click)="updateHello(hello)">Update</button>
+        <button (click)="deleteHello(hello.id)">Delete</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
